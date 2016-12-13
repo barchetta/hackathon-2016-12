@@ -1,7 +1,7 @@
 #!/bin/sh
 # Push docker image to google cloud
 
-`dirname $0`/myenv.sh
+. `dirname $0`/myenv.sh
 
 # http://kubernetes.io/docs/user-guide/pods/single-container/
 echo "--- Pushing and managing image in glcoud docker repo"

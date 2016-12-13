@@ -1,6 +1,8 @@
 #!/bin/sh
 # Build the docker image
 
-`dirname $0`/myenv.sh
+. `dirname $0`/myenv.sh
 
-echo "docker build --tag ${_user}/${_imagename} ."
+#set -x
+#echo "docker build --tag ${_user}/${_imagename} ."
+docker build --tag ${_user}/${_imagename} .
