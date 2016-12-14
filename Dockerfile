@@ -13,6 +13,8 @@ RUN npm install
 # Bundle app source
 COPY ./service /usr/src/app/
 
+ENV API_KEY="Please provide API_KEY when running this image: docker run --env API_KEY=<value>"
+
 EXPOSE 3000
 CMD [ "npm", "start" ]
 #CMD [ "sleep", "3600" ]

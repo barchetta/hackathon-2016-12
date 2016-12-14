@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var hotels = require('./routes/hotels');
 
 var app = express();
 
@@ -24,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/hotels', hotels);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -44,3 +46,16 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+var apiKey = process.env.API_KEY;
+exports.apiKey = apiKey;
+
+// HTTP/HTTPS proxy to connect to
+var http_proxy = process.env.http_proxy;
+console.log("http_proxy=" + http_proxy);
+exports.http_proxy = http_proxy;
+
+var https_proxy = process.env.https_proxy;
+console.log("https_proxy=" + https_proxy);
+exports.https_proxy = https_proxy;
+
