@@ -4,11 +4,13 @@
 . `dirname $0`/myenv.sh
 
 # http://kubernetes.io/docs/user-guide/pods/single-container/
-echo "--- Pushing and managing image in glcoud docker repo"
-echo "docker tag ${_user}/${_imagename} ${_gcloud_imagename}"
-echo "gcloud docker -- push ${_gcloud_imagename}"
+#echo "--- Pushing and managing image in glcoud docker repo"
+#echo "docker tag ${_user}/${_imagename} ${_gcloud_imagename}"
+set -x
+docker tag ${_user}/${_imagename} ${_gcloud_imagename}:v2
+gcloud docker --verbosity=debug -- push ${_gcloud_imagename}:v2
 
-echo "--- Running image "
-echo "To run: kubectl run ${_running_container_name}  --image=${_gcloud_imagename} --port ${_port}"
-echo "To list: kubectl get pods"
-echo "To delete: kubectl delete deployment ${_running_container_name}"
+#echo "--- Running image "
+#echo "To run: kubectl run ${_running_container_name}  --image=${_gcloud_imagename} --port ${_port}"
+#echo "To list: kubectl get pods"
+#echo "To delete: kubectl delete deployment ${_running_container_name}"
