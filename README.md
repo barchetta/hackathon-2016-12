@@ -1,5 +1,17 @@
 # hackathon-2016-12
 
+## Running
+
+#### Locally
+* To run: `service/bin/www`
+* http://localhost:3000/hotels
+* You must set API_KEY environment variable to your Google API key.
+* It should pick up proxy settings from http_proxy
+
+#### In GCC
+* Latest version not running there yet
+* A stub is running here: http://104.198.132.115:8080/
+
 ## Docker Notes
 
 1. `scripts/buildit`: Builds the docker image
@@ -46,3 +58,4 @@
 * [google-maps-services-js](https://github.com/googlemaps/google-maps-services-js) : Github repo for Node.js client
     * We're not using this due to proxy issues
 * [Docs for Node.js google map client](https://googlemaps.github.io/google-maps-services-js/docs/)
+
